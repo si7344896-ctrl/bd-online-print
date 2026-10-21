@@ -1,82 +1,104 @@
+
 <!doctype html>
 <html lang="bn">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BD Online Print | অনলাইন শপ</title>
-  <style>
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,'Noto Sans Bengali',sans-serif;background:#fff8f2;color:#292929}
-    header{background:#f97316;color:white;padding:18px 5%;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-    header strong{font-size:23px}
-    nav a{color:white;text-decoration:none;margin-left:12px}
-    main{max-width:1050px;margin:auto;padding:24px 16px}
-    .hero{background:linear-gradient(120deg,#ffedd5,#fff);border-radius:18px;padding:34px 24px}
-    .hero h1{color:#c2410c;margin:0 0 10px}
-    .notice{background:#fff;border-left:4px solid #f97316;padding:13px 16px;border-radius:8px;margin-top:18px;line-height:1.7}
-    .search{width:100%;padding:13px;border:1px solid #fed7aa;border-radius:10px;margin:22px 0;font-size:16px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
-    .product{background:white;border:1px solid #ffedd5;border-radius:15px;padding:18px;box-shadow:0 3px 12px #00000009}
-    .photo{background:#fff7ed;border-radius:12px;height:130px;display:grid;place-items:center;font-size:46px}
-    .price{font-weight:bold;color:#ea580c;font-size:19px}
-    button{background:#f97316;color:white;border:0;padding:12px 17px;border-radius:9px;cursor:pointer;width:100%;font-size:16px}
-    button:hover{background:#ea580c}
-    footer{text-align:center;padding:30px;color:#777}
-    small{color:#666}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BD Online Print</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#fff8f2;color:#292929}
+header{background:#f97316;color:white;padding:18px;text-align:center}
+header h1{margin:0;font-size:25px}
+main{max-width:1000px;margin:auto;padding:20px 14px}
+.hero{padding:25px;background:#ffedd5;border-radius:15px}
+.hero h2{color:#c2410c}
+.search{width:100%;padding:13px;margin:20px 0;border:1px solid #fed7aa;border-radius:9px;font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:15px}
+.product{background:white;padding:16px;border-radius:13px;border:1px solid #ffedd5}
+.photo{height:120px;background:#fff7ed;border-radius:10px;display:grid;place-items:center;font-size:48px}
+.price{color:#ea580c;font-weight:bold;font-size:20px}
+button{width:100%;padding:12px;background:#f97316;color:white;border:0;border-radius:8px;font-size:16px}
+footer{text-align:center;padding:25px;color:#777}
+</style>
 </head>
 <body>
-  <header>
-    <strong>🛍️ BD Online Print</strong>
-    <nav><a href="#products">প্রোডাক্ট</a><a href="#contact">অর্ডার তথ্য</a></nav>
-  </header>
-  <main>
-    <section class="hero">
-      <h1>BD Online Print-এ স্বাগতম!</h1>
-      <p>পছন্দের প্রোডাক্ট খুঁজুন এবং অনলাইনে অর্ডার করুন।</p>
-      <div class="notice">
-        🚚 সারা বাংলাদেশে ডেলিভারি চার্জ: <strong>১৬০ টাকা</strong><br>
-        💳 অর্ডারের জন্য ডেলিভারি চার্জ অথবা সম্পূর্ণ মূল্য অগ্রিম দিতে হবে।<br>
-        <small>পেমেন্ট পাওয়া যাচাই করার পর অর্ডার নিশ্চিত করা হবে।</small>
-      </div>
-    </section>
-    <input class="search" id="search" placeholder="🔎 প্রোডাক্ট খুঁজুন..." aria-label="প্রোডাক্ট খুঁজুন">
-    <h2 id="products">আমাদের প্রোডাক্ট</h2>
-    <div class="grid" id="grid"></div>
-    <p id="empty" hidden>কোনো প্রোডাক্ট পাওয়া যায়নি।</p>
-    <section id="contact">
-      <h2>অর্ডার করার নিয়ম</h2>
-      <p>পছন্দের প্রোডাক্টের নিচে ‘অর্ডার করুন’ চাপুন। ফর্মে প্রোডাক্টের নাম, ঠিকানা ও পেমেন্টের তথ্য দিন।</p>
-      <small>প্রোডাক্টের নাম ও দাম বর্তমানে নমুনা হিসেবে দেওয়া আছে। অর্ডার গ্রহণের আগে প্রকৃত পণ্য, দাম ও স্টক যাচাই করুন।</small>
-    </section>
-  </main>
-  <footer>© BD Online Print</footer>
-  <script>
-    const orderFormUrl='https://docs.google.com/forms/d/e/1FAIpQLScz9ZcJRmrrvfzlVOGyFa80evaB8spvykfz1ZtVUZ6I82D2gA/viewform';
-    const products=[
-      {name:'কাস্টম টি-শার্ট',price:270,emoji:'👕'},
-      {name:'ফটো ফ্রেম'4r,price:170,emoji:'🖼️'},
-      {name:'ফটো ফ্রেম'a4,price:350,emoji:'🖼️'},
-      {name:'মগ প্রিন্ট',price:450,emoji:'☕'}
-    ];
-    const grid=document.getElementById('grid');
-    const empty=document.getElementById('empty');
-    function render(q=''){
-      const filtered=products.filter(p=>p.name.includes(q.trim()));
-      grid.replaceChildren();
-      filtered.forEach(p=>{
-        const card=document.createElement('article');card.className='product';
-        const photo=document.createElement('div');photo.className='photo';photo.textContent=p.emoji;
-        const title=document.createElement('h3');title.textContent=p.name;
-        const price=document.createElement('p');price.className='price';price.textContent='৳'+p.price;
-        const btn=document.createElement('button');btn.textContent='🛒 অর্ডার করুন';
-        btn.addEventListener('click',()=>{window.location.href=orderFormUrl});
-        card.append(photo,title,price,btn);grid.append(card);
-      });
-      empty.hidden=filtered.length>0;
-    }
-    document.getElementById('search').addEventListener('input',e=>render(e.target.value));
-    render();
-  </script>
+
+<header>
+<h1>🛍️ BD Online Print</h1>
+<p>আপনার পছন্দের পণ্য অর্ডার করুন</p>
+</header>
+
+<main>
+<section class="hero">
+<h2>আমাদের অনলাইন শপে স্বাগতম!</h2>
+<p>টি-শার্ট, ফটো ফ্রেম ও মগ প্রিন্ট অর্ডার করুন।</p>
+<p>🚚 ডেলিভারি চার্জ: ৳১৬০</p>
+</section>
+
+<input id="search" class="search" placeholder="🔎 পণ্য খুঁজুন...">
+
+<h2>আমাদের পণ্য</h2>
+<div id="grid" class="grid"></div>
+<p id="empty" hidden>পণ্য পাওয়া যায়নি।</p>
+
+<h3>অর্ডার করার নিয়ম</h3>
+<p>পছন্দের পণ্যের নিচে অর্ডার বাটনে চাপ দিন। এরপর ফর্ম পূরণ করুন।</p>
+</main>
+
+<footer>© BD Online Print</footer>
+
+<script>
+const orderFormUrl =
+'https://docs.google.com/forms/d/e/1FAIpQLScz9ZcJRmrrvfzlVOGyFa80evaB8spvykfz1ZtVUZ6I82D2gA/viewform';
+
+const products = [
+ {name:'কাস্টম টি-শার্ট',price:270,emoji:'👕'},
+ {name:'ফটো ফ্রেম 4R',price:170,emoji:'🖼️'},
+ {name:'ফটো ফ্রেম A4',price:350,emoji:'🖼️'},
+ {name:'মগ প্রিন্ট',price:450,emoji:'☕'}
+];
+
+const grid = document.getElementById('grid');
+const empty = document.getElementById('empty');
+
+function render(){
+ const q = document.getElementById('search').value.trim().toLowerCase();
+ grid.replaceChildren();
+
+ const filtered = products.filter(p =>
+   p.name.toLowerCase().includes(q)
+ );
+
+ filtered.forEach(p => {
+   const card = document.createElement('article');
+   card.className = 'product';
+
+   const photo = document.createElement('div');
+   photo.className = 'photo';
+   photo.textContent = p.emoji;
+
+   const title = document.createElement('h3');
+   title.textContent = p.name;
+
+   const price = document.createElement('p');
+   price.className = 'price';
+   price.textContent = '৳' + p.price;
+
+   const btn = document.createElement('button');
+   btn.textContent = '🛒 অর্ডার করুন';
+   btn.onclick = () => window.open(orderFormUrl, '_blank');
+
+   card.append(photo,title,price,btn);
+   grid.append(card);
+ });
+
+ empty.hidden = filtered.length !== 0;
+}
+
+document.getElementById('search').addEventListener('input',render);
+render();
+</script>
+
 </body>
 </html>
