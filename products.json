@@ -19,5 +19,10 @@
     "name": "মগ প্রিন্ট",
     "price": 450,
     "image": "mug.jpg"
+  },
+  {
+    "name": "কাস্টম ক্যাপ",
+    "price": 200,
+    "image": "cap.jpg"
   }
 ]
