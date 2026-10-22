@@ -314,6 +314,101 @@ search.addEventListener('input', renderProducts);
 loadProducts();
 </script>
 
+<!-- BD Online Print Help Center -->
+<style>
+.help-button {
+  position: fixed;
+  right: 18px;
+  bottom: 20px;
+  z-index: 9999;
+  width: auto;
+  background: #f97316;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 18px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px #0003;
+  cursor: pointer;
+}
+
+.help-panel {
+  display: none;
+  position: fixed;
+  right: 18px;
+  bottom: 85px;
+  z-index: 9999;
+  width: min(310px, calc(100vw - 36px));
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 5px 25px #0003;
+  overflow: hidden;
+}
+
+.help-header {
+  background: #f97316;
+  color: white;
+  padding: 15px;
+  font-weight: bold;
+}
+
+.help-content {
+  padding: 18px;
+  text-align: center;
+}
+
+.whatsapp-help {
+  display: block;
+  background: #25D366;
+  color: white;
+  padding: 13px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 12px;
+}
+</style>
+
+<div class="help-panel" id="helpPanel">
+  <div class="help-header">
+    🎧 BD Online Print Help Center
+  </div>
+  <div class="help-content">
+    <p>আসসালামু আলাইকুম!</p>
+    <p>অর্ডার বা প্রোডাক্ট সম্পর্কে সাহায্য দরকার?</p>
+
+    <a
+      class="whatsapp-help"
+      href="https://wa.me/8801622929812"
+      target="_blank"
+      rel="noopener noreferrer">
+      💬 WhatsApp-এ কথা বলুন
+    </a>
+  </div>
+</div>
+
+<button
+  class="help-button"
+  id="helpButton"
+  type="button"
+  aria-controls="helpPanel"
+  aria-expanded="false"
+  onclick="toggleHelp()">
+  🎧 Help Center
+</button>
+
+<script>
+function toggleHelp() {
+  const panel = document.getElementById('helpPanel');
+  const button = document.getElementById('helpButton');
+  const isOpen = panel.style.display === 'block';
+
+  panel.style.display = isOpen ? 'none' : 'block';
+  button.setAttribute('aria-expanded', String(!isOpen));
+}
+</script>
+  
 </body>
 </html>
 
