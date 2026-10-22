@@ -1,0 +1,23 @@
+
+[
+  {
+    "name": "কাস্টম টি-শার্ট",
+    "price": 270,
+    "image": "tshirt.jpg"
+  },
+  {
+    "name": "ফটো ফ্রেম 4R",
+    "price": 170,
+    "image": "frame4r.jpg"
+  },
+  {
+    "name": "ফটো ফ্রেম A4",
+    "price": 350,
+    "image": "framea4.jpg"
+  },
+  {
+    "name": "মগ প্রিন্ট",
+    "price": 450,
+    "image": "mug.jpg"
+  }
+]
